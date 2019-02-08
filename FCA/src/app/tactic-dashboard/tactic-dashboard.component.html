@@ -72,11 +72,14 @@
               [style.background-size]="img_cover"  [style.background-repeat]= 'no-repeat'></div>
               <div class="text-left padd-10" style="height: 110px;">
                 <div style="  color: #FFFFFF;	font-size: 14px;	font-weight: 500;">{{tactics.brand}} {{tactics.model}}</div>
-                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.bankoffer}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.finance}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.lease}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.retail_consumer_cash}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px; padding-top:3px;">{{tactics.seasonal_discount}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px; padding-top:3px;">{{tactics.valid_till}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;">
                   <span>{{tactics.price}}</span>
-                  <span class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.country}}</span>
+                  <span class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.region}} {{tactics.country}}</span>
                 </div>
                 <!--<div style="	color: #B2B2B2;	font-size: 12px;"></div>-->
               </div>
