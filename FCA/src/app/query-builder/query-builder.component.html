@@ -1,0 +1,70 @@
+<div class="container" style="margin-top: 60px;">
+
+
+  <!--<div class="m-top35">&nbsp;</div>-->
+  <div class="ui basic segment">
+    <div style="margin:0">
+      <button (click)="addNewContainer()" class="ui primary button create-new-container">
+      Create New Contianer
+    </button>
+
+      <div class="ui primary button chart-btn">
+        Bar Chart
+      </div>
+
+      <div class="ui primary button chart-btn">
+        Line Chart
+      </div>
+
+      <div class="ui primary button chart-btn">
+        Area Chart
+      </div>
+
+      <div class="grid-stack">
+<!--
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
+          <div class="grid-stack-item-content"></div>
+        </div>
+
+        <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4">
+          <div class="grid-stack-item-content"></div>
+        </div>-->
+
+      </div>
+
+
+      <div class="ui modal data-source-modal" style="">
+        <div class="header">
+          <span>Data Source</span>
+          <button onclick="newQuery()" class="ui primary button new-query-btn">New Query +</button>
+        </div>
+        <div class="scrolling content">
+          <div id="your_queries">
+            <p>Your Queries</p>
+            <ul class="ui list">
+              <li>
+                <button class="ui secondary button">default bar chart</button>
+              </li>
+            </ul>
+          </div>
+          <div style="display: none" id="new_query_board">
+            <div class="ui form">
+              <div class="field">
+                <label>Name</label>
+                <input id="queryName" type="text">
+              </div>
+            </div>
+            <div id="builder"></div>
+
+            <div class="ui primary button" onclick="createQueryClick()">Create</div>
+            <div class="ui secondary button" onclick="cancelCreateQueryClick()">Cancel</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,105 @@
+ <div *ngIf="showFilter" class="filter-style">
+    <div style="height: 550px; overflow: scroll;">
+    <ul>
+      <div style="border-bottom: 1px solid grey; padding: 15px;">
+        <a (click)="filterBox()"><span class="glyphicon glyphicon-arrow-left"></span></a>
+        <a (click)="applyFilter()" class="pull-right small">APPLY FILTER</a>
+      </div>
+      <li style="color: white;">BRAND</li>      
+      <li>
+        <input [(ngModel)]="filterCheckbox.all" type="checkbox" name="vehicle1" id="#all" class="m-right5">
+          <span>All Brand</span>
+        </li>
+      <li><input [(ngModel)]="filterCheckbox.fiat" type="checkbox" name="vehicle1" id="#ford" class="m-right5">Fiat</li>
+      <li><input [(ngModel)]="filterCheckbox.dodge" type="checkbox" name="vehicle1" id="#fiat" class="m-right5">Dodge</li>
+      <li><input [(ngModel)]="filterCheckbox.jeep" type="checkbox" name="vehicle1" id="#jeep" class="m-right5">Jeep</li>
+      <li style="color: white;border-bottom: 1px solid gray;margin: 0px 10px 0 10px;padding: 0px;"></li>
+    </ul>
+    <ul>
+      <li style="color: white;">MODEL</li>
+      <!--<li style="color: white;border-bottom: 1px solid gray;margin: 0 20px 0 20px;"></li>-->
+      <li><input  type="checkbox" name="vehicle1"  class="m-right5">All Jeep</li>
+      <li><input  type="checkbox" name="vehicle1"  class="m-right5">All Wrangaler</li>
+      <li><input  type="checkbox" name="vehicle1"  class="m-right5">All New Gladiator</li>
+      <li><input  type="checkbox" name="vehicle1"  class="m-right5">Compass</li>
+      <li style="color: white;border-bottom: 1px solid gray;margin: 0px 10px 0 10px;padding: 0px;"></li>
+      
+     
+    </ul>
+     <ul>
+      <li style="color: white;">TRIM</li>
+      <!--<li style="color: white;border-bottom: 1px solid gray;margin: 0 20px 0 20px;"></li>-->
+      <li><input  type="checkbox" name="vehicle1"  class="m-right5">All</li>
+      <li><input  type="checkbox" name="vehicle1"  class="m-right5">Latitude</li>
+      <li><input  type="checkbox" name="vehicle1"  class="m-right5">Latitude Plus</li>
+      <li><input  type="checkbox" name="vehicle1"  class="m-right5">MOAB</li>
+      <li style="color: white;border-bottom: 1px solid gray;margin: 0px 10px 0 10px;padding: 0px;"></li>
+      
+     
+    </ul>
+    </div>
+  </div>
+
+<div class="container" style="margin-top: 60px;">
+  <button type="button" class="btn btn-default"(click)="filterBox()" style="margin-left: 100px; font-size:12px;"> 
+    FILTER
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </button>
+  <!--<div *ngIf="showFilter" style="color: azure;">
+    <ul>
+      <li><input type="checkbox" name="vehicle1" value="Bike">All Brand</li>
+      <li><input type="checkbox" name="vehicle1" value="Bike">Fiat</li>
+      <li><input type="checkbox" name="vehicle1" value="Bike">Ford</li>
+      <li><input type="checkbox" name="vehicle1" value="Bike">Tata</li>
+    </ul>
+  </div>-->
+
+
+
+  <div class="row">
+    <div class="col-xs12">
+      <button (click)="toggle()" id="bt" type="button" class="btn btn-primary pull-right">+ CREATE NEW OFFER</button>
+    </div>
+  </div>
+
+  <div [style.height.%]="height1" [style.width.%]="width1" style="display: inline-block;">
+    <div style="margin: 0 auto;text-align: left; color:white;">
+      <div  class="row m-btm30">
+        <div *ngFor="let tactics of tacticsData"  class="col-xs-12 col-sm-6 col-md-3 text-center m-left-right10"> 
+          <div [attr.carid]="tactics.id" class="car-panel">
+            <div style="background: black;">
+              <div class="car1" [style.height.px]="carHeight" [style.background]="'url(./assets/images/' + tactics.img_url + ')'" 
+              [style.background-size]="img_cover"  [style.background-repeat]= 'no-repeat'></div>
+              <div class="text-left padd-10" style="height: 110px;">
+                <div style="  color: #FFFFFF;	font-size: 14px;	font-weight: 500;">{{tactics.brand}} {{tactics.model}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.bankoffer}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px; padding-top:3px;">{{tactics.seasonal_discount}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">
+                  <span>{{tactics.price}}</span>
+                  <span class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.country}}</span>
+                </div>
+                <!--<div style="	color: #B2B2B2;	font-size: 12px;"></div>-->
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+
+  <div  [style.height.px]="height2" [style.width.%]="width2" style="display: inline-block;  vertical-align: top;">
+    <ng-container *ngIf="show">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-12 text-center">
+          <div id="drop-zone" style="height: 800px; color:black; background-color: light-gray; margin: 15px 0px 0px 15px;
+          border: 1px solid darkgray;  border-radius: 5px;">
+          <button (click)="showSubmitTactics()" type="button"class="btn btn-info">Create Offer</button>
+            <!--drop zone-->
+            
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
