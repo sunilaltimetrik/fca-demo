@@ -2,17 +2,20 @@
     <div style="height: 550px; overflow: scroll;">
     <ul>
       <div style="border-bottom: 1px solid grey; padding: 15px;">
-        <a (click)="filterBox()"><span class="glyphicon glyphicon-arrow-left"></span></a>
-        <a (click)="applyFilter()" class="pull-right small">APPLY FILTER</a>
+        <a (click)="filterBox()" class="pointer"><span class="glyphicon glyphicon-arrow-left"></span></a>
+        <a (click)="applyFilter()" class="pull-right small pointer">APPLY FILTER</a>
       </div>
       <li style="color: white;">BRAND</li>      
       <li>
-        <input [(ngModel)]="filterCheckbox.all" type="checkbox" name="vehicle1" id="#all" class="m-right5">
+        <input [(ngModel)]="filterCheckbox.all" type="checkbox" name="vehicle1" id="#all" class="m-right5 pointer">
           <span>All Brand</span>
         </li>
-      <li><input [(ngModel)]="filterCheckbox.fiat" type="checkbox" name="vehicle1" id="#ford" class="m-right5">Fiat</li>
-      <li><input [(ngModel)]="filterCheckbox.dodge" type="checkbox" name="vehicle1" id="#fiat" class="m-right5">Dodge</li>
-      <li><input [(ngModel)]="filterCheckbox.jeep" type="checkbox" name="vehicle1" id="#jeep" class="m-right5">Jeep</li>
+      <li><input [(ngModel)]="filterCheckbox.fiat" type="checkbox" name="vehicle1" id="#ford" class="m-right5 pointer">Fiat</li>
+      <li><input [(ngModel)]="filterCheckbox.grandCherokee" type="checkbox" name="vehicle1" id="#fiat" class="m-right5 pointer">Grand Cherokee</li>
+      <li><input [(ngModel)]="filterCheckbox.renegade" type="checkbox" name="vehicle1" id="#jeep" class="m-right5 pointer">Renegade</li>
+      <li><input [(ngModel)]="filterCheckbox.ram" type="checkbox" name="vehicle1" id="#jeep" class="m-right5 pointer">Ram</li>
+      <li><input [(ngModel)]="filterCheckbox.chrysler" type="checkbox" name="vehicle1" id="#jeep" class="m-right5 pointer">Chrysler</li>
+      
       <li style="color: white;border-bottom: 1px solid gray;margin: 0px 10px 0 10px;padding: 0px;"></li>
     </ul>
     <ul>
@@ -41,24 +44,16 @@
   </div>
 
 <div class="container" style="margin-top: 60px;">
-  <button type="button" class="btn btn-default"(click)="filterBox()" style="margin-left: 100px; font-size:12px;"> 
-    FILTER
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </button>
-  <!--<div *ngIf="showFilter" style="color: azure;">
-    <ul>
-      <li><input type="checkbox" name="vehicle1" value="Bike">All Brand</li>
-      <li><input type="checkbox" name="vehicle1" value="Bike">Fiat</li>
-      <li><input type="checkbox" name="vehicle1" value="Bike">Ford</li>
-      <li><input type="checkbox" name="vehicle1" value="Bike">Tata</li>
-    </ul>
-  </div>-->
-
-
-
+   
   <div class="row">
-    <div class="col-xs12">
-      <button (click)="toggle()" id="bt" type="button" class="btn btn-primary pull-right">+ CREATE NEW OFFER</button>
+    <div class="col-xs-6 padd-top15">
+      <button type="button" class="btn filter-btn"(click)="filterBox()"> 
+        FILTER
+        <span class="glyphicon glyphicon-chevron-right filter-arrow-padd"></span>
+      </button>
+    </div>
+    <div class="col-xs-6 padd-top15">
+      <button (click)="toggle()" id="bt" type="button" class="btn btn-primary pull-right f-12">+ CREATE NEW OFFER</button>
     </div>
   </div>
 
@@ -69,17 +64,17 @@
           <div [attr.carid]="tactics.id" class="car-panel">
             <div style="background: black;">
               <div class="car1" [style.height.px]="carHeight" [style.background]="'url(./assets/images/' + tactics.img_url + ')'" 
-              [style.background-size]="img_cover"  [style.background-repeat]= 'no-repeat'></div>
-              <div class="text-left padd-10" style="height: 110px;">
+              [style.background-size]="img_cover"  style="background-repeat: no-repeat;"></div>
+              <div class="text-left padd-10 tactic-card">
                 <div style="  color: #FFFFFF;	font-size: 14px;	font-weight: 500;">{{tactics.brand}} {{tactics.model}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.finance}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.lease}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.retail_consumer_cash}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px; padding-top:3px;">{{tactics.seasonal_discount}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px; padding-top:3px;">{{tactics.valid_till}}</div>
-                <div style="	color: #B2B2B2;	font-size: 12px;">
-                  <span>{{tactics.price}}</span>
-                  <span class="pull-right"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.region}} {{tactics.country}}</span>
+                <div style="	color: #B2B2B2;	font-size: 12px;" class="tactic-card-row row">
+                  <span class="col-md-6">{{tactics.price}}</span>
+                  <span class="col-md-6 text-end padd-r35"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.region}} {{tactics.country}}</span>
                 </div>
                 <!--<div style="	color: #B2B2B2;	font-size: 12px;"></div>-->
               </div>
@@ -90,13 +85,12 @@
     </div>
   </div>
 
-  <div  [style.height.px]="height2" [style.width.%]="width2" style="display: inline-block;  vertical-align: top;">
+  <div  [style.height.px]="height2" [style.width.%]="width2" style="max-width: 280px; display: inline-block;  vertical-align: top;">
     <ng-container *ngIf="show">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-12 text-center">
-          <div id="drop-zone" style="height: 800px; color:black; background-color: light-gray; margin: 15px 0px 0px 15px;
-          border: 1px solid darkgray;  border-radius: 5px;">
-          <button (click)="showSubmitTactics()" type="button"class="btn btn-info">Create Offer</button>
+          <div id="drop-zone" class="drop-zone-style">
+          <button (click)="showSubmitTactics()" type="button"class="btn btn-info" style="width:100%; margin-bottom: 10px;">Create Offer</button>
             <!--drop zone-->
             
           </div>

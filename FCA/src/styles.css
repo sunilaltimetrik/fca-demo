@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Roboto+Light');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto+Light');*/
 html, body {
     overflow-x: hidden;
     height: 100%;
@@ -13,14 +13,29 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.f-10{
+    font-size: 10px;
+}
+.f-12{
+    font-size: 12px;
+}
+.pointer {
+    cursor: pointer;
+}
 .text-left{
     text-align: left;
-    }
+}
 .no-padd-left{
     padding-left: 0px;
 }
 .no-padd-right{
     padding-right: 0px;
+}
+.padd-r20{
+    padding-right: 20px;
+}
+.padd-r35{
+    padding-right: 35px;
 }
 .padd-10{
     padding: 10px;
@@ -36,6 +51,9 @@ body {
 }
 .text-center{
     text-align: center;
+}
+.text-end{
+    text-align: end;    
 }
 .m-btm30{
     margin-bottom: 30px;

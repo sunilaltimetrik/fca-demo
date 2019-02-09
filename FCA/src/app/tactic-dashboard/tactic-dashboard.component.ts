@@ -27,8 +27,10 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
   public filterCheckbox = {
     all: false,
     fiat: false,
-    dodge: false,
-    jeep: false
+    grandCherokee: false,
+    renegade: false,
+    ram: false,
+    chrysler: false
   };
 
   constructor(
@@ -71,7 +73,7 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
           const ele = ui.draggable;
           const cloned = ele.clone();
           cloned.addClass('cloned');
-          cloned.append('<div onclick="deleteContainer(event)" class="cross-delete">X</div>');
+          cloned.append('<div onclick="deleteContainer(event)" class="cross-delete pointer">X</div>');
           cloned.appendTo('#drop-zone');
         }
       });
@@ -90,8 +92,8 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
     if (this.show) {
       this.img_cover = 'contain';
       this.buttonName = 'Hide';
-      this.width1 = '70';
-      this.width2 = '30';
+      this.width1 = '75';
+      this.width2 = '25';
       this.height1 = '100';
       this.height2 = '400';
     } else {
@@ -155,14 +157,20 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
         filterBrands.push('Fiat');
       }
 
-      if (this.filterCheckbox.dodge) {
-        filterBrands.push('Dodge');
+      if (this.filterCheckbox.grandCherokee) {
+        filterBrands.push('Grand Cherokee');
       }
 
-      if (this.filterCheckbox.jeep) {
-        filterBrands.push('Jeep');
+      if (this.filterCheckbox.renegade) {
+        filterBrands.push('RENEGADE');
       }
 
+      if (this.filterCheckbox.ram) {
+        filterBrands.push('RAM');
+      }
+      if (this.filterCheckbox.chrysler) {
+        filterBrands.push('Chrysler');
+      }
       const availableAllBrands = _.uniq(_.map(this.tacticsDataOriginal, f => f.brand));
 
       this.tacticsData = _.filter(this.tacticsDataOriginal, f => _.includes(filterBrands, f.brand));

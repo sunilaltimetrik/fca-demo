@@ -145,7 +145,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     border-radius: 50%;
     /* display: inline-block; */
     /* text-align: center; */
-    padding: 2px 6px 2px 6px;
+    padding: 8px 12px 8px 12px;
 }
 .fca-logo-padd{
     padding: 15px 0px 15px 21%;
