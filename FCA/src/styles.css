@@ -73,10 +73,11 @@ body {
 .cross-delete{
     position: absolute;
     right: 0;
-    top:0;
-    width: 25px;
-    height: 20px;
+    top: 0;
+    width: 20px;
+    height: 19px;
     background-color: white;
+    border-radius: 0% 0% 0% 50%;
 }
 
 .car-panel.cloned{

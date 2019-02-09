@@ -30,4 +30,8 @@ export class OfferListingComponent implements OnInit {
         this.sample = JSON.stringify(response);
       });
   }
+
+  compaireOffer() {
+     this.router.navigate(['/compaire-offer']);
+  }
 }

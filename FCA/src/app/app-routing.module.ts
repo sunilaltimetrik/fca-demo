@@ -4,12 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { TacticDashboardComponent } from "src/app/tactic-dashboard/tactic-dashboard.component";
 import { QueryBuilderComponent } from "src/app/query-builder/query-builder.component";
 import { OfferListingComponent } from "src/app/offer-listing/offer-listing.component";
+import { OfferCompaireComponent } from "src/app/offer-compaire/offer-compaire.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: TacticDashboardComponent },
   { path: 'query-builder', component: QueryBuilderComponent },
-  { path: 'offer-listing', component: OfferListingComponent }
+  { path: 'offer-listing', component: OfferListingComponent },
+  { path: 'compaire-offer', component: OfferCompaireComponent }
 ];
 
 @NgModule({

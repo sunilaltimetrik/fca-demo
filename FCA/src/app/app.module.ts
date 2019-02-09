@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { QueryBuilderComponent } from './query-builder/query-builder.component';
 import { OfferListingComponent } from './offer-listing/offer-listing.component';
+import { OfferCompaireComponent } from './offer-compaire/offer-compaire.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OfferListingComponent } from './offer-listing/offer-listing.component';
     TacticDashboardComponent,
     DragDropComponent,
     QueryBuilderComponent,
-    OfferListingComponent
+    OfferListingComponent,
+    OfferCompaireComponent
   ],
   imports: [
     BrowserModule,
