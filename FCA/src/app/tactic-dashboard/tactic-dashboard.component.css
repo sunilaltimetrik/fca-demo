@@ -2,10 +2,38 @@
     /*background-image: url('/../assets/images/car1.jpg');*/
     background-repeat: no-repeat;
     background-size: contain;
-    height: 130px;
+    height: 120px;
     width: 100%;
 }
-
+.tactic-card{
+    height: 120px;
+    /*vertical-align: bottom*/
+}
+.tactic-card:before{
+    height: 120px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.tactic-card-row{
+    display: inline-block;
+    vertical-align: bottom;
+}
+.car-panel.ui-draggable.ui-draggable-handle.cloned{
+    padding-bottom: 10px;
+        width: 100%;
+    max-width: 193px;
+}
+.drop-zone-style{
+    text-align: -webkit-center;
+    /*text-align: center; */
+    min-height: 800px;
+    color: black;
+    background-color: light-gray;
+    margin: 15px 0px 0px 15px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    /* padding: 0px 15px 15px 15px; */
+}
 /*filter List Start*/
 ul {
   list-style-type: none;

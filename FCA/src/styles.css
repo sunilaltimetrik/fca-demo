@@ -13,9 +13,12 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.pointer {
+    cursor: pointer;
+}
 .text-left{
     text-align: left;
-    }
+}
 .no-padd-left{
     padding-left: 0px;
 }

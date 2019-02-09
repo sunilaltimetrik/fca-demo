@@ -90,8 +90,8 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
     if (this.show) {
       this.img_cover = 'contain';
       this.buttonName = 'Hide';
-      this.width1 = '70';
-      this.width2 = '30';
+      this.width1 = '75';
+      this.width2 = '25';
       this.height1 = '100';
       this.height2 = '400';
     } else {
