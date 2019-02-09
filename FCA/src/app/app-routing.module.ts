@@ -7,8 +7,8 @@ import { OfferListingComponent } from "src/app/offer-listing/offer-listing.compo
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: TacticDashboardComponent },
-  { path: 'query-builder', component: QueryBuilderComponent },
+  { path: 'dashboard', component: QueryBuilderComponent  },
+  { path: 'query-builder', component: TacticDashboardComponent },
   { path: 'offer-listing', component: OfferListingComponent }
 ];
 

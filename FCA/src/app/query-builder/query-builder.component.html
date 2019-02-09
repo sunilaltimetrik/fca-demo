@@ -5,8 +5,8 @@
   <div class="ui basic segment">
     <div style="margin:0">
       <button (click)="addNewContainer()" class="ui primary button create-new-container">
-      Create New Contianer
-    </button>
+        Create New Contianer
+      </button>
 
       <div class="ui primary button chart-btn">
         Bar Chart
@@ -21,17 +21,40 @@
       </div>
 
       <div class="grid-stack">
-<!--
-        <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="4" data-gs-height="2">
-          <div class="grid-stack-item-content"></div>
+
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="6" data-gs-height="5">
+          <div class="grid-stack-item-content" style="padding-bottom:40px;">
+            <!-- pie chart 1 -->
+            <h2>November Sales</h2>
+            <canvas id="pie-chart-area"></canvas>
+          </div>
         </div>
 
-        <div class="grid-stack-item" data-gs-x="4" data-gs-y="0" data-gs-width="4" data-gs-height="4">
-          <div class="grid-stack-item-content"></div>
-        </div>-->
+        <div class="grid-stack-item" data-gs-x="6" data-gs-y="0" data-gs-width="6" data-gs-height="5">
+          <div class="grid-stack-item-content">
+            <!-- line chart  2 -->
+            <h2>Zonal Sales</h2>
+            <canvas id="line-chart-area-zonal"></canvas>
+          </div>
+        </div>
+
+        <div class="grid-stack-item" data-gs-x="0" data-gs-y="5" data-gs-width="6" data-gs-height="5">
+          <div class="grid-stack-item-content">
+            <!-- bar chart 3 -->
+            <h2>Total Sales per Month</h2>
+            <canvas id="bar-chart-area"></canvas>
+          </div>
+        </div>
+
+        <div class="grid-stack-item" data-gs-x="6" data-gs-y="5" data-gs-width="6" data-gs-height="5">
+          <div class="grid-stack-item-content">
+             <!-- line chart 4  -->
+             <h2>Monthly sales by Year</h2>
+             <canvas id="monthly-line-chart-area"></canvas>
+          </div>
+        </div>
 
       </div>
-
 
       <div class="ui modal data-source-modal" style="">
         <div class="header">
