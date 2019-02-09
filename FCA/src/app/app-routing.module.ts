@@ -7,9 +7,9 @@ import { OfferListingComponent } from "src/app/offer-listing/offer-listing.compo
 import { OfferCompaireComponent } from "src/app/offer-compaire/offer-compaire.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: TacticDashboardComponent },
+  { path: '', redirectTo: '/query-builder', pathMatch: 'full' },
   { path: 'query-builder', component: QueryBuilderComponent },
+  { path: 'dashboard', component: TacticDashboardComponent },
   { path: 'offer-listing', component: OfferListingComponent },
   { path: 'compaire-offer', component: OfferCompaireComponent }
 ];

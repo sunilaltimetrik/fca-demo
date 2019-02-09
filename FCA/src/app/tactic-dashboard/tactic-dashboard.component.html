@@ -61,7 +61,7 @@
     <div style="margin: 0 auto;text-align: left; color:white;">
       <div  class="row m-btm30">
         <div *ngFor="let tactics of tacticsData"  class="col-xs-12 col-sm-6 col-md-3 text-center m-left-right10"> 
-          <div [attr.carid]="tactics.id" class="car-panel">
+          <div [attr.carid]="tactics.id" class="car-panel pointer">
             <div style="background: black;">
               <div class="car1" [style.height.px]="carHeight" [style.background]="'url(./assets/images/' + tactics.img_url + ')'" 
               [style.background-size]="img_cover"  style="background-repeat: no-repeat;"></div>
