@@ -41,24 +41,16 @@
   </div>
 
 <div class="container" style="margin-top: 60px;">
-  <button type="button" class="btn btn-default"(click)="filterBox()" style="margin-left: 100px; font-size:12px;"> 
-    FILTER
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </button>
-  <!--<div *ngIf="showFilter" style="color: azure;">
-    <ul>
-      <li><input type="checkbox" name="vehicle1" value="Bike">All Brand</li>
-      <li><input type="checkbox" name="vehicle1" value="Bike">Fiat</li>
-      <li><input type="checkbox" name="vehicle1" value="Bike">Ford</li>
-      <li><input type="checkbox" name="vehicle1" value="Bike">Tata</li>
-    </ul>
-  </div>-->
-
-
-
+   
   <div class="row">
-    <div class="col-xs12">
-      <button (click)="toggle()" id="bt" type="button" class="btn btn-primary pull-right">+ CREATE NEW OFFER</button>
+    <div class="col-xs-6 padd-top15">
+      <button type="button" class="btn filter-btn"(click)="filterBox()"> 
+        FILTER
+        <span class="glyphicon glyphicon-chevron-right filter-arrow-padd"></span>
+      </button>
+    </div>
+    <div class="col-xs-6 padd-top15">
+      <button (click)="toggle()" id="bt" type="button" class="btn btn-primary pull-right f-12">+ CREATE NEW OFFER</button>
     </div>
   </div>
 

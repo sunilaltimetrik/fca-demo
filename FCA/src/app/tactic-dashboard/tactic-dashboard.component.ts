@@ -71,7 +71,7 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
           const ele = ui.draggable;
           const cloned = ele.clone();
           cloned.addClass('cloned');
-          cloned.append('<div onclick="deleteContainer(event)" class="cross-delete">X</div>');
+          cloned.append('<div onclick="deleteContainer(event)" class="cross-delete pointer">X</div>');
           cloned.appendTo('#drop-zone');
         }
       });
