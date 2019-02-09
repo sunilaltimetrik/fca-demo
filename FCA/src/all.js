@@ -300,15 +300,14 @@ function showQueryList(queryName, evt) {
 
             const ele = container.closest('.grid-stack-item').find('canvas');
             const graph = ele.data('graph');
-            const labels = _.map(data, f => f.carName);
-            const dataNodes = _.map(data, f => f.countValue);
-            
 
-            graph.data.labels = labels;
-            graph.data.datasets[0].data = dataNodes;
+            graph.data.labels = ['NovRam', 'Q4Chrysler', 'Q4Jeep'];
+            
+            graph.data.datasets[0].data = _.map(data, f => f.oct)
+            graph.data.datasets[1].data = _.map(data, f => f.nov)
+            graph.data.datasets[2].data = _.map(data, f => f.december)
 
             graph.update();
-
 
         },
         //dataType: dataType

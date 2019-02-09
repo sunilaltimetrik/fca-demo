@@ -10,6 +10,10 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
   title = 'app';
   gridStack = null;
   model = 'Title';
+  pieChartArea: any;
+  zonalLine: any;
+  yearLine4: any;
+  barChart2: any;
 
   ngOnInit() {
 
@@ -31,35 +35,270 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
       $('#builder').queryBuilder({
         filters: [
           {
-            id: 'carName',
-            type: 'string'
-          },
-          {
-            id: 'gender',
+            id: 'zone',
             type: 'string',
-            values: ['Male', 'Female']
+            input: 'select',
+            values: ['East', 'West', 'North', 'South']
           },
           {
-            id: 'countryName',
-            type: 'string'
+            id: 'is_offer_active',
+            type: 'boolean',
+            input: 'radio',
+            values: {
+              '1' : 'Active',
+              '0': 'Deactived'
+            }
           },
           {
-            id: 'time',
-            type: 'date'
-          },
-          {
-            id: 'modalYear',
-            type: 'integer'
+            id: 'profit',
+            type: 'integer',
+            input: 'number'
           }
         ]
       });
+
+      // pia chart
+      const config = {
+        type: 'pie',
+        data: {
+          datasets: [{
+            data: [
+              2000,
+              2500,
+              6000,
+              7500
+            ],
+            backgroundColor: [
+              (window as any).chartColors.red,
+              (window as any).chartColors.orange,
+              (window as any).chartColors.yellow,
+              (window as any).chartColors.green,
+            ],
+            label: 'Dataset 1'
+          }],
+          labels: [
+            'East',
+            'West',
+            'North',
+            'South'
+          ]
+        },
+        options: {
+          responsive: true
+        }
+      };
+
+      const ctx1 = (document.getElementById('pie-chart-area') as any).getContext('2d');
+      this.pieChartArea = new Chart(ctx1, config);
+
+
+      // line chart 2
+      const config2 = {
+        type: 'line',
+        data: {
+          labels: ['October', 'November', 'December'],
+          datasets: [
+            {
+              label: 'Q4Jeep - East',
+              backgroundColor: (window as any).chartColors.red,
+              borderColor: (window as any).chartColors.red,
+              data: [
+                3000, 6000, 3500
+              ],
+              fill: false,
+            },
+            {
+              label: 'Q4Jeep - West',
+              backgroundColor: (window as any).chartColors.blue,
+              borderColor: (window as any).chartColors.blue,
+              data: [
+                7000, 8500, 6600
+              ],
+              fill: false,
+            },
+            {
+              label: 'Q4Jeep - North',
+              backgroundColor: (window as any).chartColors.green,
+              borderColor: (window as any).chartColors.green,
+              data: [
+                2000, 2100, 850
+              ],
+              fill: false,
+            },
+            {
+              label: 'Q4Jeep - South',
+              backgroundColor: (window as any).chartColors.yellow,
+              borderColor: (window as any).chartColors.yellow,
+              data: [
+                5000, 6700, 4650
+              ],
+              fill: false,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          title: {
+            display: false,
+          },
+          tooltips: {
+            mode: 'index',
+            intersect: false,
+          },
+          hover: {
+            mode: 'nearest',
+            intersect: true
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Month'
+              }
+            }],
+            yAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Value'
+              }
+            }]
+          }
+        }
+      };
+
+      const ctx2 = (document.getElementById('line-chart-area-zonal') as any).getContext('2d');
+      this.zonalLine = new Chart(ctx2, config2);
+
+      // total sales per month 3
+
+      const color = Chart.helpers.color;
+
+      const barChartData = {
+        labels: ['Q4Jeep', 'NovRam', 'Q4Chrysler'],
+        datasets: [{
+          label: 'Sales',
+          backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+          borderColor: chartColors.blue,
+          borderWidth: 1,
+          data: [
+            212333,
+            344490,
+            783429
+          ]
+        }]
+      };
+
+
+      const ctx3 = (document.getElementById('bar-chart-area') as any).getContext('2d');
+      this.barChart2 = new Chart(ctx3, {
+        type: 'bar',
+        data: barChartData,
+        options: {
+          responsive: true,
+          legend: {
+            position: 'top',
+          }
+        }
+      });
+
+
+      // line chart 4
+      const config4 = {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          datasets: [
+            {
+              label: '2019',
+              backgroundColor: (window as any).chartColors.red,
+              borderColor: (window as any).chartColors.red,
+              data: [
+                136082
+              ],
+              fill: false,
+            },
+            {
+              label: '2018',
+              backgroundColor: (window as any).chartColors.blue,
+              borderColor: (window as any).chartColors.blue,
+              data: [
+                132803, 165903, 216063, 184149, 214294, 202264, 170970, 193718, 199819, 177391, 181310, 196520
+              ],
+              fill: false,
+            },
+            {
+              label: '2017',
+              backgroundColor: (window as any).chartColors.green,
+              borderColor: (window as any).chartColors.green,
+              data: [
+                152218, 168326, 190254, 176176, 193040, 187348, 161477, 176033, 174266, 153373, 154919, 171946
+              ],
+              fill: false,
+            },
+            {
+              label: '2016',
+              backgroundColor: (window as any).chartColors.yellow,
+              borderColor: (window as any).chartColors.yellow,
+              data: [
+                171352, 187318, 199467, 189005, 194720, 202421, 180389, 196805, 192883, 176609, 160827, 192519
+              ],
+              fill: false,
+            },
+            {
+              label: '2015',
+              backgroundColor: (window as any).chartColors.purple,
+              borderColor: (window as any).chartColors.purple,
+              data: [
+                145007, 163586, 197261, 189027, 202227, 185035, 180124, 190887, 194666, 196898, 187731, 213923
+              ],
+              fill: false,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          title: {
+            display: false,
+          },
+          tooltips: {
+            mode: 'index',
+            intersect: false,
+          },
+          hover: {
+            mode: 'nearest',
+            intersect: true
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Month'
+              }
+            }],
+            yAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Value'
+              }
+            }]
+          }
+        }
+      };
+
+      const ctx4 = (document.getElementById('monthly-line-chart-area') as any).getContext('2d');
+      this.yearLine4 = new Chart(ctx4, config4);
+
     }, 1000);
   }
 
   addNewContainer() {
     const html = $(`
     <div class="grid-stack-item" data-gs-x="0"
-    data-gs-y="0" data-gs-width="4" data-gs-height="2">
+    data-gs-y="0" data-gs-width="6" data-gs-height="5">
     <div style="color: white;text-align: center;">
     <div style="width: 100%;font-size: 14px;font-weight: bold;letter-spacing: 2px;
     "contenteditable="true" [textContent]="model" (input)="model=$event.target.textContent"></div>
@@ -72,7 +311,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
       </div>`);
 
     this.gridStack.addWidget(html,
-      0, 0, 4, 4);
+      0, 0, 6, 5);
 
     this.initNewContentScripts($('.grid-stack-item-content', html));
 
@@ -89,7 +328,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
 
         const container = event.target;
         ele.html(`
-          <div class="chart-container" style="position: relative;">
+          <div class="chart-container" style="position: relative;padding-bottom:50px">
               <canvas id="${id1}"></canvas>
           </div>
         `);
@@ -164,7 +403,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               data: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [{
-                  label: 'Unfilled',
+                  label: 'October',
                   fill: false,
                   backgroundColor: (window as any).chartColors.blue,
                   borderColor: (window as any).chartColors.blue,
@@ -178,7 +417,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                     randomScalingFactor()
                   ],
                 }, {
-                  label: 'Dashed',
+                  label: 'November',
                   fill: false,
                   backgroundColor: (window as any).chartColors.green,
                   borderColor: (window as any).chartColors.green,
@@ -193,7 +432,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                     randomScalingFactor()
                   ],
                 }, {
-                  label: 'Filled',
+                  label: 'December',
                   backgroundColor: (window as any).chartColors.red,
                   borderColor: (window as any).chartColors.red,
                   data: [
@@ -228,7 +467,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                     display: true,
                     scaleLabel: {
                       display: true,
-                      labelString: 'Month'
+                      labelString: 'offers'
                     },
                     ticks: {
                       fontColor: '#ffffff'
@@ -250,7 +489,14 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
             };
 
             const ctx2 = (document.getElementById(id1) as any).getContext('2d');
-            (window as any).myLine = new Chart(ctx2, config);
+            const myLine = new Chart(ctx2, config);
+
+
+            const ele2 = document.getElementById(id1);
+
+            if ($(ele2).length) {
+              $(ele2).data('graph', myLine);
+            }
 
             break;
 

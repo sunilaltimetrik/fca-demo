@@ -13,4 +13,6 @@ declare var generateLabels: any;
 declare var presets: any;
 declare var generateData: any;
 
+declare var color: any;
+declare var chartColors: any;
 
