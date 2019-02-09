@@ -26,6 +26,9 @@
 .tactic-card-row{
     /*display: inline-block;*/
     vertical-align: bottom;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }
 .car-panel.ui-draggable.ui-draggable-handle.cloned{
     padding-bottom: 10px;
