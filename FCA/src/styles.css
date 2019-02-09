@@ -31,6 +31,9 @@ body {
 .no-padd-right{
     padding-right: 0px;
 }
+.padd-r20{
+    padding-right: 20px;
+}
 .padd-r35{
     padding-right: 35px;
 }

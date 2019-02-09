@@ -11,6 +11,7 @@
     /*background-image: url('/../assets/images/car1.jpg');*/
     background-repeat: no-repeat;
     background-size: contain;
+    background-position:center;
     height: 120px;
     width: 100%;
 }
@@ -31,9 +32,10 @@
     width: 100%;
 }
 .car-panel.ui-draggable.ui-draggable-handle.cloned{
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     width: 100%;
     max-width: 193px;
+    /*height:40px;*/
 }
 .drop-zone-style{
     text-align: -webkit-center;
