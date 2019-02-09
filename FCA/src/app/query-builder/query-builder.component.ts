@@ -35,25 +35,24 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
       $('#builder').queryBuilder({
         filters: [
           {
-            id: 'carName',
-            type: 'string'
-          },
-          {
-            id: 'gender',
+            id: 'zone',
             type: 'string',
-            values: ['Male', 'Female']
+            input: 'select',
+            values: ['East', 'West', 'North', 'South']
           },
           {
-            id: 'countryName',
-            type: 'string'
+            id: 'is_offer_active',
+            type: 'boolean',
+            input: 'radio',
+            values: {
+              '1' : 'Active',
+              '0': 'Deactived'
+            }
           },
           {
-            id: 'time',
-            type: 'date'
-          },
-          {
-            id: 'modalYear',
-            type: 'integer'
+            id: 'profit',
+            type: 'integer',
+            input: 'number'
           }
         ]
       });
@@ -299,7 +298,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
   addNewContainer() {
     const html = $(`
     <div class="grid-stack-item" data-gs-x="0"
-    data-gs-y="0" data-gs-width="4" data-gs-height="2">
+    data-gs-y="0" data-gs-width="6" data-gs-height="5">
     <div style="color: white;text-align: center;">
     <div style="width: 100%;font-size: 14px;font-weight: bold;letter-spacing: 2px;
     "contenteditable="true" [textContent]="model" (input)="model=$event.target.textContent"></div>
@@ -312,7 +311,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
       </div>`);
 
     this.gridStack.addWidget(html,
-      0, 0, 4, 4);
+      0, 0, 6, 5);
 
     this.initNewContentScripts($('.grid-stack-item-content', html));
 
@@ -329,7 +328,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
 
         const container = event.target;
         ele.html(`
-          <div class="chart-container" style="position: relative;">
+          <div class="chart-container" style="position: relative;padding-bottom:50px">
               <canvas id="${id1}"></canvas>
           </div>
         `);
@@ -404,7 +403,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               data: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [{
-                  label: 'Unfilled',
+                  label: 'October',
                   fill: false,
                   backgroundColor: (window as any).chartColors.blue,
                   borderColor: (window as any).chartColors.blue,
@@ -418,7 +417,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                     randomScalingFactor()
                   ],
                 }, {
-                  label: 'Dashed',
+                  label: 'November',
                   fill: false,
                   backgroundColor: (window as any).chartColors.green,
                   borderColor: (window as any).chartColors.green,
@@ -433,7 +432,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                     randomScalingFactor()
                   ],
                 }, {
-                  label: 'Filled',
+                  label: 'December',
                   backgroundColor: (window as any).chartColors.red,
                   borderColor: (window as any).chartColors.red,
                   data: [
@@ -468,7 +467,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                     display: true,
                     scaleLabel: {
                       display: true,
-                      labelString: 'Month'
+                      labelString: 'offers'
                     },
                     ticks: {
                       fontColor: '#ffffff'
@@ -490,7 +489,14 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
             };
 
             const ctx2 = (document.getElementById(id1) as any).getContext('2d');
-            (window as any).myLine = new Chart(ctx2, config);
+            const myLine = new Chart(ctx2, config);
+
+
+            const ele2 = document.getElementById(id1);
+
+            if ($(ele2).length) {
+              $(ele2).data('graph', myLine);
+            }
 
             break;
 
