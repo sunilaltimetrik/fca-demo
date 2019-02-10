@@ -1,3 +1,15 @@
+.bacck-btn{
+    font-size: 12px;
+    color: white;
+    background-color: #2C2C30;
+    border: 1px solid #78787C;
+}
+.bacck-btn:hover, .bacck-btn:active, .bacck-btn:visited{
+    font-size: 12px;
+    color: white;
+    background-color: #78787C;
+    border: 1px solid #78787C;
+}
 .filter-btn{
     font-size: 12px;
     color: white;

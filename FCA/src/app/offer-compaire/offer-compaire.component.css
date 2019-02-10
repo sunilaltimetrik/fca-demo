@@ -1,10 +1,62 @@
+.bacck-btn{
+    font-size: 12px;
+    color: white;
+    background-color: #2C2C30;
+    border: 1px solid #78787C;
+}
+.bacck-btn:hover, .bacck-btn:active, .bacck-btn:visited{
+    font-size: 12px;
+    color: white;
+    background-color: #78787C;
+    border: 1px solid #78787C;
+}
+.comp-car1{
+    background-image: url(/../assets/images/car1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    height: 140px;
+    width: 100%;
+}
+.comp-car2{
+    background-image: url(/../assets/images/car2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    height: 140px;
+    width: 100%;
+}
+.comp-car3{
+    background-image: url(/../assets/images/car3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    height: 140px;
+    width: 100%;
+}
+.comp-car4{
+    background-image: url(/../assets/images/car4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    height: 140px;
+    width: 100%;
+}
 
+tr:nth-child(even) {
+  background: white;
+  color: black;
+}
+tr:nth-child(odd) {
+  background: transparent;
+  color: white;
+}
 .comparison {
-  max-width:940px;
-  margin:0 auto;
-  font:13px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;
-  text-align:center;
-  padding:10px;
+    max-width: 100%;
+    margin: 0 auto;
+    font: 13px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+    padding-top: 15px;
 }
 
 .comparison table {
@@ -12,7 +64,7 @@
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
-  border-bottom:1px solid #CCC;
+  border:1px solid #CCC;
 }
 
 .comparison td, .comparison th {
@@ -25,12 +77,12 @@
   font-size:18px;
   font-weight:bold !important;
   border-bottom:0 !important;
-  padding-top:10px !important;
+  /*padding-top:10px !important;*/
 }
 
-.comparison tbody tr:nth-child(odd) {
+/*.comparison tbody tr:nth-child(odd) {
   display:none;
-}
+}*/
 
 .comparison .compare-row {
   background:#F5F5F5;
@@ -67,9 +119,11 @@
 }
 
 .comparison .qbse {
-  background:#0078C1;
-  border-top-left-radius: 3px;
-  border-left:0px;
+    background: #0078C1;
+    border-top-left-radius: 3px;
+    border-left: 0px;
+    text-align: center;
+    font-weight: 600;
 }
 
 .comparison .qbo {

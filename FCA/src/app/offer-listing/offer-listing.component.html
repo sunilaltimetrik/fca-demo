@@ -1,8 +1,12 @@
 
 <div class="container" style="margin-top: 60px;">
   <div class="row">
-    <div class="col-xs-6 padd-top15">
-      <button type="button" class="btn filter-btn"(click)="compaireOffer()"> 
+    <div class="col-xs-12 padd-top15">
+       <button type="button" class="btn bacck-btn" [routerLink]="['/dashboard']"> 
+         <span class="glyphicon glyphicon-chevron-left bacck-arrow-padd"></span>
+        Back
+      </button>
+      <button type="button" class="btn filter-btn pull-right"(click)="compaireOffer()"> 
         Compaire Offer
         <span class="glyphicon glyphicon-chevron-right filter-arrow-padd"></span>
       </button>
