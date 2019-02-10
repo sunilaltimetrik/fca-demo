@@ -63,18 +63,41 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
 
   ngAfterViewChecked() {
 
-    setTimeout(function () {
+    setTimeout(() => {
       // $('#drop-zone').droppable('destroy');
       // $('.car-panel').draggable('destroy');
 
       $('#drop-zone').droppable({
         accept: '.car-panel',
-        drop: function (event, ui) {
+        drop: (event, ui) => {
           const ele = ui.draggable;
-          const cloned = ele.clone();
-          cloned.addClass('cloned');
-          cloned.append('<div onclick="deleteContainer(event)" class="cross-delete pointer">X</div>');
-          cloned.appendTo('#drop-zone');
+          const offersContainer = [];
+          const draggingId = parseInt($(ele).attr('carId'), 10);
+
+          $('#drop-zone > .cloned').each((index, ele1) => {
+            offersContainer.push(parseInt($(ele1).attr('carId'), 10));
+          });
+
+          let brandDragged = '';
+
+          if (offersContainer.length) {
+            const find = _.find(this.tacticsDataOriginal, f => f.id === offersContainer[0]);
+            if (find) {
+              brandDragged = find.brand;
+            }
+          }
+
+          const findDraggingData = _.find(this.tacticsDataOriginal, f => f.id === draggingId);
+
+          if ((_.includes(offersContainer, draggingId) === false)
+            && (offersContainer.length === 0 || (findDraggingData && findDraggingData.brand === brandDragged))
+          ) {
+            const cloned = ele.clone();
+
+            cloned.addClass('cloned');
+            cloned.append('<div onclick="deleteContainer(event)" class="cross-delete pointer">X</div>');
+            cloned.appendTo('#drop-zone');
+          }
         }
       });
 
@@ -137,11 +160,10 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
       offersContainer.push($(ele).attr('carId'));
     });
 
-    console.log(offersContainer.length);
-    // if(){
 
-    // }
-     this.router.navigate(['/offer-listing']);
+    localStorage.setItem('selectedCars', JSON.stringify(offersContainer));
+
+    this.router.navigate(['/offer-listing']);
 
   }
 
