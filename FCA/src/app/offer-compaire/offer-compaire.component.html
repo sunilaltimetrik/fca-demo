@@ -1,8 +1,8 @@
 <div class="container" style="margin-top: 60px;">
   <div class="row">
     <div class="col-xs-6 padd-top15">
-      <button type="button" class="btn bacck-btn" [routerLink]="['/offer-listing']"> 
-         <span class="glyphicon glyphicon-chevron-left bacck-arrow-padd"></span>
+      <button type="button" class="btn bacck-btn" [routerLink]="['/offer-listing']">
+        <span class="glyphicon glyphicon-chevron-left bacck-arrow-padd"></span>
         Back
       </button>
     </div>
@@ -17,10 +17,10 @@
             Brand & Model
           </th>
           <th class="qbse">
-           Finance
+            Finance
           </th>
           <th class="qbse">
-           Lease
+            Lease
           </th>
           <th class="qbse">
             Retail Consumer Cash
@@ -35,7 +35,7 @@
             Country
           </th>
           <th class="qbse">
-           Region
+            Region
           </th>
           <th class="qbse">
             Valid Till
@@ -70,54 +70,16 @@
       </thead>
       <tbody>
 
-        <tr> 
-          <td>Grand Cherokee - SUMMIT 4X2</td>
-          <td>-</td>
-          <td>-</td>	
-          <td>$3,000</td>   
-          <td>-</td>
-          <td>$31,695</td>	
-          <td>US</td> 
-          <td>All</td>
-          <td>03/31/2019</td>	
-        </tr>
-
-        <tr>
-          <td> RENEGADE - SPORT</td>
-          <td>-</td>
-          <td>-</td>	
-          <td>$3,000</td>   
-          <td>-</td>
-          <td>$31,695</td>	
-          <td>US</td> 
-          <td>All</td>
-          <td>03/31/2019</td>	
-        </tr>
-
- 
-        <tr>
-          <td>RAM - 1500 BIG HORN</td>
-          <td>-</td>
-          <td>-</td>	
-          <td>$3,000</td>   
-          <td>-</td>
-          <td>$31,695</td>	
-          <td>US</td> 
-          <td>All</td>
-          <td>03/31/2019</td>	
-        </tr>
-
-
-        <tr>
-          <td>Chrysler - PACIFICA HYBRID </td>
-          <td>-</td>
-          <td>-</td>	
-          <td>$3,000</td>   
-          <td>-</td>
-          <td>$31,695</td>	
-          <td>US</td> 
-          <td>All</td>
-          <td>03/31/2019</td>	
+        <tr *ngFor="let tactics of tacticsData">
+          <td><span>{{tactics.brand}} {{tactics.model}}</span></td>
+          <td>{{tactics.finance || '--'}}</td>
+          <td>{{tactics.lease || '--'}}</td>
+          <td>{{tactics.retail_consumer_cash || '--'}}</td>
+          <td>{{tactics.seasonal_discount || '--'}}</td>
+          <td>{{tactics.price || '--'}}</td>
+          <td>{{tactics.country || '--'}}</td>
+          <td>{{tactics.region || '--'}}</td>
+          <td>{{tactics.valid_till || '--'}}</td>
         </tr>
 
       </tbody>
