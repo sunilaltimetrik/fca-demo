@@ -84,7 +84,13 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
           ]
         },
         options: {
-          responsive: true
+          responsive: true,
+          legend: {
+            position: 'top',
+            labels: {
+              fontColor: '#ffffff'
+            }
+          },
         }
       };
 
@@ -138,6 +144,12 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         },
         options: {
           responsive: true,
+          legend: {
+            position: 'top',
+            labels: {
+              fontColor: '#ffffff'
+            }
+          },
           title: {
             display: false,
           },
@@ -155,6 +167,9 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               scaleLabel: {
                 display: true,
                 labelString: 'Month'
+              },
+              ticks: {
+                fontColor: '#ffffff'
               }
             }],
             yAxes: [{
@@ -162,6 +177,9 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               scaleLabel: {
                 display: true,
                 labelString: 'Value'
+              },
+              ticks: {
+                fontColor: '#ffffff'
               }
             }]
           }
@@ -199,6 +217,24 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
           responsive: true,
           legend: {
             position: 'top',
+            labels: {
+              fontColor: '#ffffff'
+            }
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              color: "rgba(255,99,132,0.2)",
+              ticks: {
+                fontColor: '#ffffff',
+              }
+            }],
+            yAxes: [{
+              display: true,
+              ticks: {
+                fontColor: '#ffffff'
+              }
+            }]
           }
         }
       });
@@ -259,6 +295,12 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         },
         options: {
           responsive: true,
+           legend: {
+            position: 'top',
+            labels: {
+              fontColor: '#ffffff'
+            }
+          },
           title: {
             display: false,
           },
@@ -276,6 +318,9 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               scaleLabel: {
                 display: true,
                 labelString: 'Month'
+              },
+              ticks: {
+                fontColor: '#ffffff'
               }
             }],
             yAxes: [{
@@ -283,6 +328,9 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               scaleLabel: {
                 display: true,
                 labelString: 'Value'
+              },
+              ticks: {
+                fontColor: '#ffffff'
               }
             }]
           }
@@ -449,6 +497,12 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               },
               options: {
                 responsive: true,
+                legend: {
+                  position: 'top',
+                  labels: {
+                    fontColor: '#ffffff'
+                  }
+                },
                 title: {
                   display: true,
                   text: 'Line Chart',
