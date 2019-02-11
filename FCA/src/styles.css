@@ -54,6 +54,7 @@ body {
 }
 .text-center{
     text-align: center;
+    text-align: -moz-center;
 }
 .text-end{
     text-align: end;    
@@ -156,9 +157,6 @@ body {
 }
 .padd-top20{
     padding-top: 20px;
-}
-.text-center{
-    text-align: center;
 }
 .m-btm30{
     margin-bottom: 30px;

@@ -2,7 +2,7 @@
 		"id": 1,
 		"brand": "Fiat",
 		"model": "500X",
-		"finance": "2% APR For 36 Months",
+		"finance": "Finance: 2% APR For 36 Months",
 		"lease": "",
 		"retail_consumer_cash": "",
 		"seasonal_discount": "",
@@ -10,69 +10,28 @@
 		"country": "US",
 		"region": "All",
 		"img_url": "car1.jpg",
-		"valid_till": "03/01/2019"
+		"valid_till": "Validity: 03/01/2019"
 	},
 	{
 		"id": 2,
 		"brand": "Fiat",
 		"model": "500X",
-		"finance": "0.9% APR For 36 Months",
+		"finance": "",
 		"lease": "",
 		"retail_consumer_cash": "",
-		"seasonal_discount": "5% For New Year",
+		"seasonal_discount": "Seasonal Discount: 5% Off For New Year",
 		"price": "$19,995",
 		"country": "US",
 		"region": "All",
 		"img_url": "car1.jpg",
-		"valid_till": "03/01/2019"
+		"valid_till": "Validity: 03/01/2019"
 	},
-	{
-		"id": 3,
-		"brand": "Fiat",
-		"model": "500X",
-		"finance": "",
-		"lease": "$246 per month for 48 months",
-		"retail_consumer_cash": "",
-		"seasonal_discount": "5% For Quaterly Closure",
-		"price": "$19,995",
-		"country": "US",
-		"region": "All",
-		"img_url": "car1.jpg",
-		"valid_till": "03/31/2019"
-	},
-	{
-		"id": 4,
-		"brand": "Fiat",
-		"model": "Spider",
-		"finance": "",
-		"lease": "$309 per month for 42 months",
-		"retail_consumer_cash": "",
-		"seasonal_discount": "",
-		"price": "$24,995",
-		"country": "US",
-		"region": "All",
-		"img_url": "car2.jpg",
-		"valid_till": "03/01/2019"
-	},
-	{
-		"id": 5,
-		"brand": "Fiat",
-		"model": "Spider",
-		"finance": "4.9% APR For 72 Months",
-		"lease": "",
-		"retail_consumer_cash": "",
-		"seasonal_discount": "",
-		"price": "$24,995",
-		"country": "US",
-		"region": "All",
-		"img_url": "car2.jpg",
-		"valid_till": "04/30/2019"
-	},
+	
 	{
 		"id": 6,
 		"brand": "Grand Cherokee",
 		"model": "SUMMIT 4X2",
-		"finance": "0% APR For 48 Months",
+		"finance": "Finance: 0% APR For 48 Months",
 		"lease": "",
 		"retail_consumer_cash": "",
 		"seasonal_discount": "",
@@ -80,36 +39,23 @@
 		"country": "US",
 		"region": "All",
 		"img_url": "car3.jpg",
-		"valid_till": "03/31/2019"
+		"valid_till": "Validity: 03/31/2019"
 	},
 	{
 		"id": 7,
 		"brand": "Grand Cherokee",
 		"model": "SUMMIT 4X2",
 		"finance": "",
-		"lease": "$351 per month for 36 months",
+		"lease": "Lease: $351 per month for 36 months",
 		"retail_consumer_cash": "",
 		"seasonal_discount": "",
 		"price": "$31,695",
 		"country": "US",
 		"region": "All",
 		"img_url": "car3.jpg",
-		"valid_till": "04/30/2019"
+		"valid_till": "Validity: 04/30/2019"
 	},
-	{
-		"id": 8,
-		"brand": "Grand Cherokee",
-		"model": "SUMMIT 4X2",
-		"finance": "",
-		"lease": "",
-		"retail_consumer_cash": "$3,000",
-		"seasonal_discount": "",
-		"price": "$31,695",
-		"country": "US",
-		"region": "All",
-		"img_url": "car3.jpg",
-		"valid_till": "03/31/2019"
-	},
+
 	{
 		"id": 9,
 		"brand": "RENEGADE",
@@ -117,12 +63,12 @@
 		"finance": "",
 		"lease": "",
 		"retail_consumer_cash": "",
-		"seasonal_discount": "0% APR For 36 months Plus up to $1,500",
+		"seasonal_discount": "Seasonal Discount: 0% APR For 36 months Plus up to $1,500 Cash Back",
 		"price": "$18,750",
 		"country": "US",
 		"region": "All",
 		"img_url": "car4.jpg",
-		"valid_till": "03/31/2019"
+		"valid_till": "Validity: 03/31/2019"
 	},
 	{
 		"id": 10,
@@ -130,13 +76,13 @@
 		"model": "SPORT",
 		"finance": "",
 		"lease": "",
-		"retail_consumer_cash": "$4,500",
+		"retail_consumer_cash": "$4,500 Cash Back",
 		"seasonal_discount": "",
 		"price": "$18,750",
 		"country": "US",
 		"region": "All",
 		"img_url": "car4.jpg",
-		"valid_till": "02/27/2019"
+		"valid_till": "Validity: 02/27/2019"
 	},
 	{
 		"id": 11,
@@ -145,12 +91,12 @@
 		"finance": "",
 		"lease": "",
 		"retail_consumer_cash": "",
-		"seasonal_discount": "5.9% APR For 72 months Plus up to $500",
+		"seasonal_discount": "Seasonal Discount: 5.9% APR For 72 months Plus up to $500 Cash Back",
 		"price": "$31,795",
 		"country": "US",
 		"region": "All",
 		"img_url": "car6.jpg",
-		"valid_till": "02/27/2019"
+		"valid_till": "Validity: 02/27/2019"
 	},
 	{
 		"id": 12,
@@ -158,42 +104,15 @@
 		"model": "1500 BIG HORN",
 		"finance": "",
 		"lease": "",
-		"retail_consumer_cash": "$4,250",
+		"retail_consumer_cash": "$4,250 Cash Back",
 		"seasonal_discount": "",
 		"price": "$31,795",
 		"country": "US",
 		"region": "All",
 		"img_url": "car6.jpg",
-		"valid_till": "02/27/2019"
+		"valid_till": "Validity: 02/27/2019"
 	},
-	{
-		"id": 13,
-		"brand": "RAM",
-		"model": "1500 BIG HORN",
-		"finance": "",
-		"lease": "$299 per month for 36 months",
-		"retail_consumer_cash": "",
-		"seasonal_discount": "",
-		"price": "$31,795",
-		"country": "US",
-		"region": "All",
-		"img_url": "car6.jpg",
-		"valid_till": "02/27/2019"
-	},
-	{
-		"id": 14,
-		"brand": "RAM",
-		"model": "3500",
-		"finance": "5.9% APR For 72 months Plus $250",
-		"lease": "",
-		"retail_consumer_cash": "",
-		"seasonal_discount": "",
-		"price": "$34,445",
-		"country": "US",
-		"region": "All",
-		"img_url": "car5.jpg",
-		"valid_till": "05/13/2019"
-	},
+	
 	{
 		"id": 15,
 		"brand": "Chrysler",
@@ -201,12 +120,12 @@
 		"finance": "",
 		"lease": "",
 		"retail_consumer_cash": "",
-		"seasonal_discount": "3.9% APR For 72 months Plus $3000",
+		"seasonal_discount": "3.9% APR For 72 months Plus $3000 Cash Back",
 		"price": "$26,995",
 		"country": "US",
 		"region": "All",
 		"img_url": "car7.jpg",
-		"valid_till": "02/27/2019"
+		"valid_till": "Validity: 02/27/2019"
 	},
 	{
 		"id": 16,
@@ -214,12 +133,12 @@
 		"model": "PACIFICA HYBRID",
 		"finance": "",
 		"lease": "",
-		"retail_consumer_cash": "$3,000",
+		"retail_consumer_cash": "$3,000 Cash Back",
 		"seasonal_discount": "",
 		"price": "$39,995",
 		"country": "US",
 		"region": "All",
 		"img_url": "car8.jpg",
-		"valid_till": "02/27/2019"
+		"valid_till": "Validity: 02/27/2019"
 	}
 ]

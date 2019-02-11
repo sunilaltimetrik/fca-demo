@@ -8,8 +8,9 @@
       </label>
     <div id="sidebarMenu">
       <ul class="sidebarMenuInner">
-        <li><a [routerLink]="['/dashboard']" target="_self">Dashboard</a></li>
-        <li><a [routerLink]="['/query-builder']" target="_self">Query Builder</a></li>
+        <li [routerLink]="['/query-builder']"><a target="_self">Dashboard</a></li>
+        <li [routerLink]="['/dashboard']"><a target="_self">Tactics</a></li>
+        <li [routerLink]="['/offer-listing']"><a target="_self">Offers</a></li>
 <!--        
         <li><a href="" target="_blank">Instagram</a></li>
         <li><a href="" target="_blank">Twitter</a></li>
