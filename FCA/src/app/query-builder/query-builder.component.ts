@@ -86,7 +86,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         options: {
           responsive: true,
           legend: {
-            position: 'top',
+            position: 'bottom',
             labels: {
               fontColor: '#ffffff'
             }
@@ -145,7 +145,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         options: {
           responsive: true,
           legend: {
-            position: 'top',
+            position: 'bottom',
             labels: {
               fontColor: '#ffffff'
             }
@@ -216,7 +216,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         options: {
           responsive: true,
           legend: {
-            position: 'top',
+            position: 'bottom',
             labels: {
               fontColor: '#ffffff'
             }
@@ -296,7 +296,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         options: {
           responsive: true,
            legend: {
-            position: 'top',
+            position: 'bottom',
             labels: {
               fontColor: '#ffffff'
             }
@@ -498,7 +498,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               options: {
                 responsive: true,
                 legend: {
-                  position: 'top',
+                  position: 'bottom',
                   labels: {
                     fontColor: '#ffffff'
                   }

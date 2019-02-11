@@ -166,7 +166,8 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
     this.router.navigate(['/offer-listing']);
 
   }
-
+  clearFilter() {
+   }
   applyFilter() {
     console.log(this.filterCheckbox);
 

@@ -4,6 +4,7 @@
       <div style="border-bottom: 1px solid grey; padding: 15px;">
         <a (click)="filterBox()" class="pointer"><span class="glyphicon glyphicon-arrow-left"></span></a>
         <a (click)="applyFilter()" class="pull-right small pointer">APPLY FILTER</a>
+        <!--<a (click)="clearFilter()" class="pull-right small pointer">CLEAR FILTER</a>-->
       </div>
       <li style="color: white;">BRAND</li>      
       <li>
@@ -75,8 +76,8 @@
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.finance}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.lease}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.retail_consumer_cash}}</div>
-                <div style="	color: #B2B2B2;	font-size: 12px; padding-top:3px;">{{tactics.seasonal_discount}}</div>
-                <div style="	color: #B2B2B2;	font-size: 12px; padding-top:3px;">{{tactics.valid_till}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.seasonal_discount}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.valid_till}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;" class="tactic-card-row row">
                   <span class="col-md-6">{{tactics.price}}</span>
                   <span class="col-md-6 text-end padd-r35"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.region}} {{tactics.country}}</span>
