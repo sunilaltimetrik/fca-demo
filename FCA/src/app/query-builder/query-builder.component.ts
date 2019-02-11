@@ -45,7 +45,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
             type: 'boolean',
             input: 'radio',
             values: {
-              '1' : 'Active',
+              '1': 'Active',
               '0': 'Deactived'
             }
           },
@@ -57,33 +57,44 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         ]
       });
 
+      // Chart.defaults.global.tooltips.custom = function (tooltip) {
+      //   // Tooltip Element
+      //   const tooltipEl = $('#chartjs-tooltip');
+      //   debugger
+      // };
+
       // pia chart
       const config = {
         type: 'pie',
         data: {
           datasets: [{
             data: [
-              2000,
-              2500,
-              6000,
-              7500
+              23.3,
+              18,
+              10.7
             ],
             backgroundColor: [
               (window as any).chartColors.red,
               (window as any).chartColors.orange,
-              (window as any).chartColors.yellow,
               (window as any).chartColors.green,
             ],
-            label: 'Dataset 1'
+            label: 'Dataset 1',
           }],
           labels: [
-            'East',
-            'West',
-            'North',
-            'South'
+            'Q4Jeep',
+            'NovRam',
+            'Q4Chrysler'
           ]
         },
         options: {
+          tooltips: {
+            callbacks: {
+              label: function (tooltipItem, data) {
+                const label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
+                return '$ ' + label;
+              }
+            }
+          },
           responsive: true,
           legend: {
             position: 'bottom',
@@ -105,7 +116,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
           labels: ['October', 'November', 'December'],
           datasets: [
             {
-              label: 'Q4Jeep - East',
+              label: 'East',
               backgroundColor: (window as any).chartColors.red,
               borderColor: (window as any).chartColors.red,
               data: [
@@ -114,7 +125,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               fill: false,
             },
             {
-              label: 'Q4Jeep - West',
+              label: 'West',
               backgroundColor: (window as any).chartColors.blue,
               borderColor: (window as any).chartColors.blue,
               data: [
@@ -123,7 +134,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               fill: false,
             },
             {
-              label: 'Q4Jeep - North',
+              label: 'North',
               backgroundColor: (window as any).chartColors.green,
               borderColor: (window as any).chartColors.green,
               data: [
@@ -132,7 +143,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               fill: false,
             },
             {
-              label: 'Q4Jeep - South',
+              label: 'South',
               backgroundColor: (window as any).chartColors.yellow,
               borderColor: (window as any).chartColors.yellow,
               data: [
@@ -156,6 +167,12 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
           tooltips: {
             mode: 'index',
             intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                const label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
+                return '$ ' + (label / 1000);
+              }
+            }
           },
           hover: {
             mode: 'nearest',
@@ -176,10 +193,13 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'Value'
+                labelString: 'Sales ($)'
               },
               ticks: {
-                fontColor: '#ffffff'
+                fontColor: '#ffffff',
+                callback: function (label, index, labels) {
+                  return (label / 1000);
+                }
               }
             }]
           }
@@ -194,17 +214,19 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
       const color = Chart.helpers.color;
 
       const barChartData = {
-        labels: ['Q4Jeep', 'NovRam', 'Q4Chrysler'],
+        labels: ['Oct', 'Nov', 'Dec'],
         datasets: [{
-          label: 'Sales',
-          backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
-          borderColor: chartColors.blue,
-          borderWidth: 1,
-          data: [
-            212333,
-            344490,
-            783429
-          ]
+          label: "Q4Jeep",
+          backgroundColor: "blue",
+          data: [17000, 23300, 15600]
+        }, {
+          label: "NovRam",
+          backgroundColor: "red",
+          data: [0, 18000, 0]
+        }, {
+          label: "Q4Chrysler",
+          backgroundColor: "green",
+          data: [2400, 10700, 3200]
         }]
       };
 
@@ -221,6 +243,16 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               fontColor: '#ffffff'
             }
           },
+          tooltips: {
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                const label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
+                return '$ ' + (label / 1000);
+              }
+            }
+          },
           scales: {
             xAxes: [{
               display: true,
@@ -231,8 +263,15 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
             }],
             yAxes: [{
               display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Sales ($)'
+              },
               ticks: {
-                fontColor: '#ffffff'
+                fontColor: '#ffffff',
+                callback: function (label, index, labels) {
+                  return (label / 1000);
+                }
               }
             }]
           }
@@ -295,7 +334,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         },
         options: {
           responsive: true,
-           legend: {
+          legend: {
             position: 'bottom',
             labels: {
               fontColor: '#ffffff'
@@ -307,6 +346,12 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
           tooltips: {
             mode: 'index',
             intersect: false,
+            callbacks: {
+              label: function (tooltipItem, data) {
+                const label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
+                return '$ ' + (label / 1000);
+              }
+            }
           },
           hover: {
             mode: 'nearest',
@@ -327,10 +372,13 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'Value'
+                labelString: 'Sales ($)'
               },
               ticks: {
-                fontColor: '#ffffff'
+                fontColor: '#ffffff',
+                callback: function (label, index, labels) {
+                  return (label / 1000);
+                }
               }
             }]
           }
