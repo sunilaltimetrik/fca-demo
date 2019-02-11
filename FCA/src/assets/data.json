@@ -51,7 +51,7 @@
 		"price": "$24,995",
 		"country": "US",
 		"region": "All",
-		"img_url": "car1.jpg",
+		"img_url": "car2.jpg",
 		"valid_till": "03/01/2019"
 	},
 	{
@@ -149,7 +149,7 @@
 		"price": "$31,795",
 		"country": "US",
 		"region": "All",
-		"img_url": "car5.jpg",
+		"img_url": "car6.jpg",
 		"valid_till": "02/27/2019"
 	},
 	{
@@ -163,7 +163,7 @@
 		"price": "$31,795",
 		"country": "US",
 		"region": "All",
-		"img_url": "car5.jpg",
+		"img_url": "car6.jpg",
 		"valid_till": "02/27/2019"
 	},
 	{
@@ -177,7 +177,7 @@
 		"price": "$31,795",
 		"country": "US",
 		"region": "All",
-		"img_url": "car5.jpg",
+		"img_url": "car6.jpg",
 		"valid_till": "02/27/2019"
 	},
 	{
@@ -205,7 +205,7 @@
 		"price": "$26,995",
 		"country": "US",
 		"region": "All",
-		"img_url": "car6.jpg",
+		"img_url": "car7.jpg",
 		"valid_till": "02/27/2019"
 	},
 	{
@@ -219,7 +219,7 @@
 		"price": "$39,995",
 		"country": "US",
 		"region": "All",
-		"img_url": "car7.jpg",
+		"img_url": "car8.jpg",
 		"valid_till": "02/27/2019"
 	}
 ]
