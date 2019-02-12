@@ -153,20 +153,40 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
 
 
 
-  showSubmitTactics() {
-    const offersContainer = [];
+  createOffer() {
+    const tacticId = [];
+    let merged = {};
 
     $('#drop-zone > .cloned').each((index, ele) => {
-      offersContainer.push($(ele).attr('carId'));
+      const id = parseInt($(ele).attr('carId'), 10);
+      tacticId.push(id);
+
+      const found = _.find(this.tacticsDataOriginal, f => f.id === id);
+
+      if (found) {
+        merged = _.assign(_.pickBy(merged, f => f !== ''), _.pickBy(found, f => f !== ''));
+      }
     });
 
-    localStorage.setItem('selectedCars', JSON.stringify(offersContainer));
+    let offersL: any = localStorage.getItem('offers');
+    if (offersL) {
+      offersL = JSON.parse(offersL);
+    } else {
+      offersL = [];
+    }
+
+    offersL.push(merged);
+
+    localStorage.setItem('offers', JSON.stringify(offersL));
 
     this.router.navigate(['/offer-listing']);
 
   }
+
   clearFilter() {
-   }
+
+  }
+
   applyFilter() {
     console.log(this.filterCheckbox);
 

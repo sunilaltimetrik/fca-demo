@@ -11,14 +11,15 @@
         <li [routerLink]="['/query-builder']"><a target="_self">Dashboard</a></li>
         <li [routerLink]="['/dashboard']"><a target="_self">Tactics</a></li>
         <li [routerLink]="['/offer-listing']"><a target="_self">Offers</a></li>
-<!--        
+        <li (click)="resetCache()" ><a target="_self">Reset All Data</a></li>
+        <!--        
         <li><a href="" target="_blank">Instagram</a></li>
         <li><a href="" target="_blank">Twitter</a></li>
         <li><a href="" target="_blank">YouTube</a></li>
         <li><a href="" target="_blank">Linkedin</a></li>-->
       </ul>
     </div>
-     <img routerLink="/query-builder" class="fca-logo-padd pointer out-line-trans" src="./assets/images/fca_logo.png"/>
+    <img routerLink="/query-builder" class="fca-logo-padd pointer out-line-trans" src="./assets/images/fca_logo.png" />
   </div>
   <!--<div class="col-xs-4">
     
@@ -29,7 +30,7 @@
       <span class="input-group-btn">
         <button class="btn search-btn" type="button">
           <span class=" glyphicon glyphicon-search"></span>
-        </button>
+      </button>
       </span>
     </div>
   </div>
@@ -38,7 +39,7 @@
     <img class="padd-top20" src="./assets/images/notifications_icon.png"/>    
   </div>-->
   <div class="col-xs-2 col-sm-2 no-padd-left padd-top20 text-end ">
-    <img class="padd-r20 pointer" src="./assets/images/notifications_icon.png"/>        
-    <span class="profile-cercle pointer">S</span>  
+    <img class="padd-r20 pointer" src="./assets/images/notifications_icon.png" />
+    <span class="profile-cercle pointer">S</span>
   </div>
 </div>

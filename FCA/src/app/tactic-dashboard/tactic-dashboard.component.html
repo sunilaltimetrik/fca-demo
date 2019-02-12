@@ -78,8 +78,12 @@
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.retail_consumer_cash}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.seasonal_discount}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.valid_till}}</div>
+
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.sales_expected}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.revenue_expected}}</div>
+                <div style="	color: #B2B2B2;	font-size: 12px;">{{tactics.total_cost}}</div>
                 <div style="	color: #B2B2B2;	font-size: 12px;" class="tactic-card-row row">
-                  <span class="col-md-6">{{tactics.price}}</span>
+                  <span class="col-md-6">{{tactics.cost}}</span>
                   <span class="col-md-6 text-end padd-r35"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.region}} {{tactics.country}}</span>
                 </div>
                 <!--<div style="	color: #B2B2B2;	font-size: 12px;"></div>-->
@@ -96,7 +100,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-12 text-center">
           <div id="drop-zone" class="drop-zone-style">
-          <button (click)="showSubmitTactics()" type="button"class="btn btn-info" style="width:100%; margin-bottom: 10px;">Create Offer</button>
+          <button (click)="createOffer()" type="button"class="btn btn-info" style="width:100%; margin-bottom: 10px;">Create Offer</button>
             <!--drop zone-->
             
           </div>
