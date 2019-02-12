@@ -91,7 +91,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
             callbacks: {
               label: function (tooltipItem, data) {
                 const label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
-                return '$ ' + label;
+                return '$ ' + label + ' k';
               }
             }
           },
@@ -170,7 +170,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
             callbacks: {
               label: function (tooltipItem, data) {
                 const label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
-                return '$ ' + (label / 1000);
+                return '$ ' + (Math.round((label / 1000) * 10) / 10) + ' k';
               }
             }
           },
@@ -198,7 +198,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               ticks: {
                 fontColor: '#ffffff',
                 callback: function (label, index, labels) {
-                  return (label / 1000);
+                  return (Math.round((label / 1000) * 10) / 10) + ' k';
                 }
               }
             }]
@@ -220,13 +220,14 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
           backgroundColor: "blue",
           data: [17000, 23300, 15600]
         }, {
-          label: "NovRam",
-          backgroundColor: "red",
-          data: [0, 18000, 0]
-        }, {
           label: "Q4Chrysler",
           backgroundColor: "green",
           data: [2400, 10700, 3200]
+        },
+        {
+          label: "NovRam",
+          backgroundColor: "red",
+          data: [0, 18000, 0]
         }]
       };
 
@@ -249,7 +250,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
             callbacks: {
               label: function (tooltipItem, data) {
                 const label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
-                return '$ ' + (label / 1000);
+                return '$ ' + (Math.round((label / 1000) * 10) / 10) + ' k';
               }
             }
           },
@@ -270,7 +271,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               ticks: {
                 fontColor: '#ffffff',
                 callback: function (label, index, labels) {
-                  return (label / 1000);
+                  return (Math.round((label / 1000) * 10) / 10) + ' k';
                 }
               }
             }]
@@ -349,7 +350,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
             callbacks: {
               label: function (tooltipItem, data) {
                 const label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] || '';
-                return '$ ' + (label / 1000);
+                return '$ ' + (Math.round((label / 1000) * 10) / 10) + ' k';
               }
             }
           },
@@ -377,7 +378,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
               ticks: {
                 fontColor: '#ffffff',
                 callback: function (label, index, labels) {
-                  return (label / 1000);
+                  return (Math.round((label / 1000) * 10) / 10) + ' k';
                 }
               }
             }]
