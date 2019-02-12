@@ -160,7 +160,6 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
       offersContainer.push($(ele).attr('carId'));
     });
 
-
     localStorage.setItem('selectedCars', JSON.stringify(offersContainer));
 
     this.router.navigate(['/offer-listing']);
