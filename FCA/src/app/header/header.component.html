@@ -8,10 +8,10 @@
       </label>
     <div id="sidebarMenu">
       <ul class="sidebarMenuInner">
-        <li [routerLink]="['/query-builder']"><a target="_self">Dashboard</a></li>
-        <li [routerLink]="['/dashboard']"><a target="_self">Tactics</a></li>
-        <li [routerLink]="['/offer-listing']"><a target="_self">Offers</a></li>
-        <li (click)="resetCache()" ><a target="_self">Reset All Data</a></li>
+        <li [routerLink]="['/dashboard']" class="option-item"><a target="_self">Dashboard</a></li>
+        <li [routerLink]="['/tactics-list']"  class="option-item"><a target="_self">Tactics</a></li>
+        <li [routerLink]="['/offer-listing']"  class="option-item"><a target="_self">Offers</a></li>
+        <li (click)="resetCache()" ><a target="_self"  class="option-item">Reset All Data</a></li>
         <!--        
         <li><a href="" target="_blank">Instagram</a></li>
         <li><a href="" target="_blank">Twitter</a></li>
@@ -19,7 +19,7 @@
         <li><a href="" target="_blank">Linkedin</a></li>-->
       </ul>
     </div>
-    <img routerLink="/query-builder" class="fca-logo-padd pointer out-line-trans" src="./assets/images/fca_logo.png" />
+    <img routerLink="/dashboard" class="fca-logo-padd pointer out-line-trans" src="./assets/images/fca_logo.png" />
   </div>
   <!--<div class="col-xs-4">
     
@@ -38,8 +38,8 @@
   <!--<div class="col-xs-1 col-sm-1 no-padd-right padd-left8 text-end">
     <img class="padd-top20" src="./assets/images/notifications_icon.png"/>    
   </div>-->
-  <div class="col-xs-2 col-sm-2 no-padd-left padd-top20 text-end ">
-    <img class="padd-r20 pointer" src="./assets/images/notifications_icon.png" />
+  <div class="col-xs-2 col-sm-2  padd-top20 text-end ">
+    <!--<img class="padd-r20 pointer" src="./assets/images/notifications_icon.png" />-->
     <span class="profile-cercle pointer">S</span>
   </div>
 </div>

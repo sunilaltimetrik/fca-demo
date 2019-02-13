@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { QueryBuilderComponent } from './query-builder/query-builder.component';
 import { OfferListingComponent } from './offer-listing/offer-listing.component';
 import { OfferCompaireComponent } from './offer-compaire/offer-compaire.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [

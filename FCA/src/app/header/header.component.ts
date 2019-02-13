@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { NavigationEnd } from "@angular/router";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,10 @@ import { NavigationEnd } from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private http: HttpClient
+    ) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         $("#openSidebarMenu").prop('checked', false);
@@ -26,6 +30,7 @@ export class HeaderComponent implements OnInit {
 
   resetCache() {
     localStorage.clear();
+    this.router.navigate(['/dashboard']);
   }
 
 }

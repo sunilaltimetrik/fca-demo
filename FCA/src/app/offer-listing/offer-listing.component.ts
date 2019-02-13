@@ -16,7 +16,8 @@ export class OfferListingComponent implements OnInit {
   allTacticsData: any;
   objectList: any;
   val: any;
-
+  offerNum: any;
+  rNum: any;
 
   constructor(
     private router: Router,
@@ -44,6 +45,8 @@ export class OfferListingComponent implements OnInit {
     //       });
     //     }
     //   });
+    this.offerNum = localStorage.getItem('offersId');
+
 
     this.tacticsData = [];
 
@@ -100,5 +103,8 @@ export class OfferListingComponent implements OnInit {
   //       // console.log(offerObj);
   //     });
   // }
-
+  rendomNum() {
+    this.rNum = Math.floor((Math.random() * 10) + 1);
+    localStorage.setItem('offersId', this.rNum);
+  }
 }

@@ -209,3 +209,4 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 li:hover, li:active, li:visited{
     background-color: #78787C;
 }
+.option-item {outline: none;}

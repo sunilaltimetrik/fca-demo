@@ -7,15 +7,15 @@ import { OfferListingComponent } from "src/app/offer-listing/offer-listing.compo
 import { OfferCompaireComponent } from "src/app/offer-compaire/offer-compaire.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/query-builder', pathMatch: 'full' },
-  { path: 'query-builder', component: QueryBuilderComponent },
-  { path: 'dashboard', component: TacticDashboardComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: QueryBuilderComponent },
+  { path: 'tactics-list', component: TacticDashboardComponent },
   { path: 'offer-listing', component: OfferListingComponent },
   { path: 'compaire-offer', component: OfferCompaireComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload', useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

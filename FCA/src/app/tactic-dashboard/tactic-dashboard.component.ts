@@ -23,6 +23,7 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
   public buttonName: any = 'Show';
   public tacticsDataOriginal: any;
   public sample: any;
+  rNum: any;
 
   public filterCheckbox = {
     all: false,
@@ -179,6 +180,8 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
 
     localStorage.setItem('offers', JSON.stringify(offersL));
 
+    this.rendomNum();
+
     this.router.navigate(['/offer-listing']);
 
   }
@@ -217,5 +220,9 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
 
       this.tacticsData = _.filter(this.tacticsDataOriginal, f => _.includes(filterBrands, f.brand));
     }
+  }
+  rendomNum() {
+    this.rNum = Math.floor((Math.random() * 10) + 1);
+    localStorage.setItem('offersId', this.rNum);
   }
 }
