@@ -187,7 +187,7 @@ export class TacticDashboardComponent implements OnInit, AfterViewInit, AfterVie
   }
 
   clearFilter() {
-
+      this.tacticsData = _.cloneDeep(this.tacticsDataOriginal);
   }
 
   applyFilter() {

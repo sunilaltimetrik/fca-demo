@@ -11,11 +11,11 @@
         <input [(ngModel)]="filterCheckbox.all" type="checkbox" name="vehicle1" id="#all" class="m-right5 pointer">
           <span>All Brand</span>
         </li>
-      <li><input [(ngModel)]="filterCheckbox.fiat" type="checkbox" name="vehicle1" id="#ford" class="m-right5 pointer">Fiat</li>
-      <li><input [(ngModel)]="filterCheckbox.grandCherokee" type="checkbox" name="vehicle1" id="#fiat" class="m-right5 pointer">Grand Cherokee</li>
-      <li><input [(ngModel)]="filterCheckbox.renegade" type="checkbox" name="vehicle1" id="#jeep" class="m-right5 pointer">Renegade</li>
-      <li><input [(ngModel)]="filterCheckbox.ram" type="checkbox" name="vehicle1" id="#jeep" class="m-right5 pointer">Ram</li>
-      <li><input [(ngModel)]="filterCheckbox.chrysler" type="checkbox" name="vehicle1" id="#jeep" class="m-right5 pointer">Chrysler</li>
+      <li><input [(ngModel)]="filterCheckbox.fiat" type="checkbox" name="vehicle1" id="#fiat" class="m-right5 pointer">Fiat</li>
+      <li><input [(ngModel)]="filterCheckbox.grandCherokee" type="checkbox" name="vehicle1" id="#cherokee" class="m-right5 pointer">Grand Cherokee</li>
+      <li><input [(ngModel)]="filterCheckbox.renegade" type="checkbox" name="vehicle1" id="#renegade" class="m-right5 pointer">Renegade</li>
+      <li><input [(ngModel)]="filterCheckbox.ram" type="checkbox" name="vehicle1" id="#ram" class="m-right5 pointer">Ram</li>
+      <li><input [(ngModel)]="filterCheckbox.chrysler" type="checkbox" name="vehicle1" id="#chrysler" class="m-right5 pointer">Chrysler</li>
       
       <li style="color: white;border-bottom: 1px solid gray;margin: 0px 10px 0 10px;padding: 0px;"></li>
     </ul>
@@ -86,8 +86,8 @@
                 <div style="	color: #B2B2B2;	font-size: 12px;" class="tactic-card-row row">
                   <!--<span class="col-md-6">{{tactics.cost}}</span>-->
                   
-                  <span class="col-md-6">Valid Till: {{tactics.valid_till}}</span>
-                  <span class="col-md-6 text-end padd-r35"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.region}} {{tactics.country}}</span>
+                  <span class="col-md-8">Valid Till: {{tactics.valid_till}}</span>
+                  <span class="col-md-4 text-end padd-r35"><span class="glyphicon glyphicon-map-marker"></span>{{tactics.region}} {{tactics.country}}</span>
                 </div>
                 <!--<div style="	color: #B2B2B2;	font-size: 12px;"></div>-->
               </div>

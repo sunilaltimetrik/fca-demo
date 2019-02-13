@@ -18,7 +18,8 @@ export class OfferListingComponent implements OnInit {
   val: any;
   offerNum: any;
   rNum: any;
-
+  numberOfOffer: any;
+  enableOfferBtn: any;
   constructor(
     private router: Router,
     private http: HttpClient,
@@ -30,6 +31,9 @@ export class OfferListingComponent implements OnInit {
   }
 
   getDataFromJson() {
+    this.enableOfferBtn = false;
+    this. enableCompaireBtn();
+
     // this.http.get('../../assets/data.json', { responseType: 'json' }).subscribe(
     //   response => {
     //     this.tacticsDataOriginal = _.cloneDeep(response);
@@ -106,5 +110,14 @@ export class OfferListingComponent implements OnInit {
   rendomNum() {
     this.rNum = Math.floor((Math.random() * 10) + 1);
     localStorage.setItem('offersId', this.rNum);
+  }
+  enableCompaireBtn() {
+   this.numberOfOffer =  localStorage.getItem('offersId');
+   console.log(this.numberOfOffer.length);
+   if (this.numberOfOffer.length) {
+    this.enableOfferBtn = true;
+   } else {
+     this.enableOfferBtn = false;
+   }
   }
 }
