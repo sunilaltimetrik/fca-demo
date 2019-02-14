@@ -16,7 +16,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
   barChart2: any;
 
   ngOnInit() {
-
+    $(".ui.dimmer > .data-source-modal").remove();
   }
 
   ngAfterViewInit(): void {
@@ -32,31 +32,60 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
       });
 
 
-      $('#builder').queryBuilder({
-        filters: [
-          {
-            id: 'zone',
-            type: 'string',
-            input: 'select',
-            values: ['East', 'West', 'North', 'South']
-          },
-          {
-            id: 'is_offer_active',
-            type: 'boolean',
-            input: 'radio',
-            values: {
-              '1': 'Active',
-              '0': 'Deactived'
-            }
-          },
-          {
-            id: 'profit',
-            type: 'integer',
-            input: 'number'
-          }
-        ]
-      });
+      $.ajax({
+        type: "GET",
+        url: 'https://appdev.altimetrik.com/api/getofferids',
+        success: (data) => {
 
+          $('#builder').queryBuilder({
+            filters: [
+              {
+                id: 'zone',
+                type: 'string',
+                input: 'select',
+                values: ['East', 'West', 'North', 'South']
+              },
+              {
+                id: 'offer_id',
+                type: 'string',
+                input: 'select',
+                values: _.map(data, f => f.offer_id)
+              },
+              {
+                id: 'octSales',
+                type: 'string',
+                input: 'number'
+              },
+              {
+                id: 'novSales',
+                type: 'string',
+                input: 'number'
+              },
+              {
+                id: 'decSales',
+                type: 'string',
+                input: 'number'
+              },
+              // {
+              //   id: 'is_offer_active',
+              //   type: 'boolean',
+              //   input: 'radio',
+              //   values: {
+              //     '1': 'Active',
+              //     '0': 'Deactived'
+              //   }
+              // },
+              // {
+              //   id: 'profit',
+              //   type: 'integer',
+              //   input: 'number'
+              // }
+            ]
+          });
+
+        }
+
+      });
       // Chart.defaults.global.tooltips.custom = function (tooltip) {
       //   // Tooltip Element
       //   const tooltipEl = $('#chartjs-tooltip');
@@ -107,7 +136,6 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
 
       const ctx1 = (document.getElementById('pie-chart-area') as any).getContext('2d');
       this.pieChartArea = new Chart(ctx1, config);
-
 
       // line chart 2
       const config2 = {
@@ -217,16 +245,16 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         labels: ['Oct', 'Nov', 'Dec'],
         datasets: [{
           label: "Q4Jeep",
-          backgroundColor: "blue",
+          backgroundColor: (window as any).chartColors.red,
           data: [17000, 23300, 15600]
         }, {
           label: "Q4Chrysler",
-          backgroundColor: "green",
+          backgroundColor: (window as any).chartColors.green,
           data: [2400, 10700, 3200]
         },
         {
           label: "NovRam",
-          backgroundColor: "red",
+          backgroundColor: (window as any).chartColors.purple,
           data: [0, 18000, 0]
         }]
       };
@@ -390,6 +418,8 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
       this.yearLine4 = new Chart(ctx4, config4);
 
     }, 1000);
+
+
   }
 
   addNewContainer() {
@@ -400,6 +430,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
     <div style="width: 100%;font-size: 14px;font-weight: bold;letter-spacing: 2px;
     "contenteditable="true" [textContent]="model" (input)="model=$event.target.textContent"></div>
     </div>
+    <h2 class="content-top">Title</h2>
     <div class="grid-stack-item-content"></div>
     <div class=" del-container">
     <div onclick="deleteQueryContainer(event)" class="ui secondary button">Delete</div>
@@ -426,7 +457,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
         const container = event.target;
         ele.html(`
           <div class="chart-container" style="position: relative;padding-bottom:50px">
-              <canvas id="${id1}"></canvas>
+              <canvas id="${id1}" style="margin-top: 30px;"></canvas>
           </div>
         `);
 
@@ -541,7 +572,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                     randomScalingFactor(),
                     randomScalingFactor()
                   ],
-                  fill: true,
+                  fill: false,
                 }]
               },
               options: {
@@ -553,7 +584,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                   }
                 },
                 title: {
-                  display: true,
+                  display: false,
                   text: 'Line Chart',
                   fontColor: '#f0f0f0'
                 },
@@ -569,7 +600,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                   xAxes: [{
                     display: true,
                     scaleLabel: {
-                      display: true,
+                      display: false,
                       labelString: 'offers'
                     },
                     ticks: {
@@ -580,7 +611,7 @@ export class QueryBuilderComponent implements OnInit, AfterViewInit {
                     display: true,
                     scaleLabel: {
                       display: true,
-                      labelString: 'Value'
+                      labelString: 'Sales'
                     },
                     ticks: {
                       beginAtZero: true,

@@ -202,7 +202,7 @@ function generateLabels() {
 utils.srand(42);
 
 function deleteQueryContainer(evt) {
-    
+
     var gridStack = $('.grid-stack').data('gridstack');
     var item = $(evt.target).closest(".grid-stack-item");
 
@@ -276,7 +276,22 @@ function cancelCreateQueryClick() {
     listQuery();
 }
 
+function randomNoRepeats(array) {
+    var copy = array.slice(0);
+    return function () {
+        if (copy.length < 1) { copy = array.slice(0); }
+        var index = Math.floor(Math.random() * copy.length);
+        var item = copy[index];
+        copy.splice(index, 1);
+        return item;
+    };
+}
+
+
+
 function showQueryList(queryName, evt) {
+
+    localStorage.setItem('queryNameSelected', queryName);
 
     const q = JSON.parse(localStorage.getItem('queries')) || [];
     const f = _.find(q, g => g.name === queryName);
@@ -291,21 +306,72 @@ function showQueryList(queryName, evt) {
     }
 
     $.ajax({
-        type: "POST",
-        url: 'https://us-central1-firebase-devcontrolpanel.cloudfunctions.net/wallpostDynamicMySqlQuery',
-        data: {
-            query
-        },
+        type: "GET",
+        url: 'https://appdev.altimetrik.com/api/offers?query=' + query,
+        // data: {
+
+        // },
         success: (data) => {
+
 
             const ele = container.closest('.grid-stack-item').find('canvas');
             const graph = ele.data('graph');
 
-            graph.data.labels = ['NovRam', 'Q4Chrysler', 'Q4Jeep'];
-            
-            graph.data.datasets[0].data = _.map(data, f => f.oct)
-            graph.data.datasets[1].data = _.map(data, f => f.nov)
-            graph.data.datasets[2].data = _.map(data, f => f.december)
+            container.closest('.grid-stack-item').find('.content-top').html(
+                localStorage.getItem('queryNameSelected')
+            );
+
+            // graph.data.labels = ['NovRam', 'Q4Chrysler', 'Q4Jeep'];
+
+            // [0].data = _.map(data, f => f.oct)
+            // graph.data.datasets[1].data = _.map(data, f => f.nov)
+            // graph.data.datasets[2].data = _.map(data, f => f.december)
+
+            // graph.data.labels = _.map(data, f => f.offer_id);
+            graph.data.labels = ['Oct', 'Nov', 'Dec '];
+
+            //    // graph.data.datasets = 
+
+            //     _.forEach(graph.data.datasets, (e, index) => {
+            //         if (!data[index]) {
+            //             graph.data.datasets.splice(index, 1)
+            //         }
+            //     });
+
+            graph.data.datasets = [];
+
+            const getColor = [chartColors.red, chartColors.orange, chartColors.blue, chartColors.green, chartColors.yellow]
+            var chooser = randomNoRepeats(getColor);
+            _.forEach(data, (dataEach, index) => {
+                const color = chooser();
+                // if (graph.data.datasets[index]) {
+                //     graph.data.datasets[index].label = dataEach.offer_id
+                //     graph.data.datasets[index].data = [
+                //         dataEach.oct, dataEach.nov, dataEach.december
+                //     ];
+                // }
+
+                graph.data.datasets[index] = {
+                    fill: false,
+                    backgroundColor: color,
+                    borderColor: color,
+                    label: dataEach.offer_id,
+                    data: [
+                        dataEach.oct, dataEach.nov, dataEach.december
+                    ]
+                }
+            });
+
+            // graph.data.datasets[0]
+
+            // graph.data.datasets = [];
+
+            // _.forEach(graph.data.labels, labelName => {
+            //     const found = _.find(data, g => g.offer_id === labelName);
+            //     if (found) {
+            //         graph.data.datasets.push();
+            //     }
+            // });
 
             graph.update();
 

@@ -172,6 +172,15 @@ body {
     margin-top: 35px;   
 }
 
-
+.content-top{
+    position: absolute;
+    font-size: 20px;
+    color: #fff;
+    top: 3px;
+    left: 40%;
+    margin: 0;
+    padding: 0;
+    z-index: 111111;
+}
 
 
